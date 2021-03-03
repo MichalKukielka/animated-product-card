@@ -10,6 +10,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    perspective: 2900px;
 }
 
 .container {
@@ -20,8 +21,8 @@ body {
 }
 
 .card {
-
-    min-height: 80vh;
+    transform-style: preserve-3d;
+    min-height: 75vh;
     width: 35rem;
     border-radius: 30px;
     padding: 0rem 5rem;
@@ -33,19 +34,77 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightcoral;
 }
 
 .sneaker img { 
     width: 20rem;
+    z-index: 2;
+    transition: all .75s ease-out;
 }
 
-.cirlce {
+.circle {
     width: 15rem;
     height: 15rem;
-    background-color: linear-gradient(
+    background: linear-gradient(
         to right,
-        rgba(245, 70, 66, .75)
+        rgba(245, 70, 66, .75),
         rgba(8, 83, 156, .750)
     );
+    position: absolute;
+    border-radius: 50%;
+}
+
+.info h1 {
+    font-size: 3rem;
+    transition: all .75s ease-out;
+}
+
+.info h3 {
+    font-size: 1.3rem;
+    padding: 2rem 0;
+    font-weight: lighter;
+    color: #585858;
+    text-align: justify;
+    transition: all .75s ease-out;
+}
+
+.sizes {
+    display: flex;
+    justify-content: space-between;
+    transition: all .75s ease-out;
+}
+
+.sizes button {
+    padding: .5rem 2rem;
+    background: none;
+    border: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, .2);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    color: black;
+    transition: all .75s ease-out;
+    outline: none;
+}
+
+button.active {
+    background-color: black;
+    color: white;
+}
+
+.purchase {
+    margin-top: 5rem;
+}
+
+.purchase button {
+    width: 100%;
+    padding: 1rem 0;
+    background: #f54642;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 30px;
+    outline: none;
+    transition: all .75s ease-out;
 }
